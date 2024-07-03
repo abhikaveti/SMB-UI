@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 443.6px;
+    padding: 2%;
+    justify-content: space-around;
+    border-radius: 2%;
+    background-color: darkgray;
+}
+
+input{
+    width: 100%;
+    padding: 3% 0 3% 0%;
+    border-radius: 5px;
+    /* margin: 0 0 5% 0; */
+    /* max-width: 374px; */
+}
+
+#submit{
+    align-self: center;
+    margin-top: 5%;
+    padding-right: 3%;
+    color: whitesmoke;
+    background-color: cadetblue;
+}
+
+#reenterPwd{
+    margin: 0;
+}
+
+#username{
+    margin: 0;
+}
+
+small{
+    margin-bottom: 5%;
+}
+a{
+    text-decoration: none;
+}

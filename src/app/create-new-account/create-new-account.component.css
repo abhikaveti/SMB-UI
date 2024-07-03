@@ -1,0 +1,38 @@
+
+.detailsContainer{
+    width: 443.6px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 2%;
+    padding: 2%;
+    padding-right: 3%;
+    background-image: url("C:\AoT\Angular\social-media-application\src\assets\moroccan-flower-dark.png");
+    background-position: center;
+    background-size:40%;
+    color: white;
+}
+
+input{
+    width: 100%;
+    padding: 1.5% 0 1.5% 1%;
+    border-radius: 2.5px;
+    border: none;
+    margin-bottom: 2.5%;
+}
+
+p{
+    padding: none;
+    margin: auto;
+}
+
+#submitform{
+    margin-top: 5%;
+}
+
+.succuessmsg{
+    margin: auto;
+    text-align: center;
+    background-color: aqua;
+    padding: 5%;
+}

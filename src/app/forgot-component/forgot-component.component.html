@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form [formGroup]="forgotPasswordForm">
+            <div class="container">
+                <div class="form-group">
+                    <label for="id">Username</label>
+                    <input type="text" placeholder="ABID" id="id" [class.is-invalid]="userName?.invalid && userName?.touched" class="form-control" (keyup)="getUserDetails()" formControlName="userName">
+                    <div *ngIf="userName?.invalid && userName?.touched">
+                        <small *ngIf="userName?.errors?.['required']" class="text-danger">Username is a required field</small>
+                        <small *ngIf="userName?.errors?.['minlength']" class="text-danger">Enter a valid username</small>
+                        <small *ngIf="userNotFound" class="text-danger">Username not found</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="newpassword">Password</label>
+                    <input type="password" placeholder="New Password" id="newpassword" class="form-control" formControlName="newpassword">
+                    <div *ngIf="newpassWord?.invalid && newpassWord?.touched">
+                        <small *ngIf="newpassWord?.errors?.['required']" class="text-danger">Password is a required field</small>
+                        <small *ngIf="newpassWord?.errors?.['minlength']" class="text-danger">Password should be atleast 8 characters</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input type="password" placeholder="New Password" id="confirmPassword" class="form-control" formControlName="confirmPassword">
+                    <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
+                        <small *ngIf="confirmPassword?.errors?.['required']" class="text-danger">Password is a required field</small>
+                        <small *ngIf="confirmPassword?.errors?.['minlength']" class="text-danger">Password should be atleast 8 characters</small>
+                    </div>
+                    <div *ngIf="forgotPasswordForm?.invalid">
+                        <small *ngIf="forgotPasswordForm?.errors?.['misMatch']" class="text-danger">Passwords do not match</small>
+                    </div>
+                </div>
+                <label for="submit">
+                    <input type="button" [disabled]="forgotPasswordForm.invalid" value="submit" id="submit" (click)="resetPassword()">
+                </label>
+                <div *ngIf="isPasswordChanged">
+                    <p>Password changed successfully!!</p> <a href="/">Log In</a>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

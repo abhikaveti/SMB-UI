@@ -1,0 +1,19 @@
+<div class="popup">
+    <form [formGroup]="createGrpForm">
+        <div class="groupname">
+            <div class="form-group">
+                <label for="groupName">
+                    <input type="text" id="groupName" placeholder="enter group name" class="form-control create-grp" formControlName="groupName">
+                </label>
+                <div *ngIf="groupName?.touched && groupName?.invalid">
+                    <small *ngIf="isGroupNameExist" class="text-danger">Group already exist</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="submit">
+                    <input type="button" [disabled]="createGrpForm.invalid" value="create" id="submit" class="btn btn-primary create-btn" (click)="createGrp()">
+                </label>
+            </div>
+        </div>
+    </form>
+</div>

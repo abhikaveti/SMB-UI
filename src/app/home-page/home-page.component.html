@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page Component</title>
+</head>
+<body>
+    <header>
+        <h4>
+            <a class="logo" href="/home/{{encryptedId}}" >MyApplication</a>
+        </h4>
+        <div class="logoutbtn">
+            <div class="userid" id="userName">
+                {{username}}
+            </div>
+            <div>
+                <img class="logout" src="assets/logout-svgrepo-com.svg" (click)="logout()">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="creategroup" *ngIf="groups.length === 0 && !createGroup">
+            <img class="plus" src="assets\plus-svgrepo-com (1).svg" alt="">
+            <input type="button" class="create-btn" value='Create group' (click)="createGroup=true"/>
+        </div>
+        <div class="creategrp" *ngIf="createGroup">
+            <app-create-group [username] = "username"></app-create-group>
+        </div>
+        <div *ngIf="groups.length !== 0" class="grpList">
+            <div *ngFor="let grp of groups">
+                <div class="group" (click)="getGroup(grp.group.groupId)">
+                    <b class="groupName">{{grp.group.groupName}}</b>
+                    <div class="grp-members">
+                        <img src="assets\group-members.png">
+                        <span>{{grp.group.groupSize}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
