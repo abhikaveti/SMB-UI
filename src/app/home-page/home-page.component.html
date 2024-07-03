@@ -20,7 +20,7 @@
         </div>
     </header>
     <main>
-        <div class="creategroup" *ngIf="groups.length === 0 && !createGroup">
+        <div [ngClass]="groups.length === 0 && !createGroup ? 'creategroup' : 'create-more-grps'">
             <img class="plus" src="assets\plus-svgrepo-com (1).svg" alt="">
             <input type="button" class="create-btn" value='Create group' (click)="createGroup=true"/>
         </div>

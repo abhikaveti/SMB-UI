@@ -10,11 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GroupDetailsComponent {
 
   groupId:any;
+  grpDetails : any;
 
   constructor(private service:ValidateCredsService, private route:Router, private router:ActivatedRoute){
     this.router.params.subscribe(params=>{
       this.groupId = params['groupId'];
       this.service.getGroupDetails(this.groupId).subscribe(response=>{
+        this.grpDetails = response;
         console.log(response);
         
       }, error=>{
@@ -22,6 +24,11 @@ export class GroupDetailsComponent {
         
       });
     });
+  }
+
+  addMember(){
+    console.log('addinng a member');
+    
   }
 
 }

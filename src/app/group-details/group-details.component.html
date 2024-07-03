@@ -7,7 +7,16 @@
 </head>
 <body>
     <header>
-        <!-- {{}} -->
+        <h5>{{grpDetails.groupName}}</h5>
     </header>
+    <main>
+        <div class="no-members-msg" *ngIf="grpDetails.groupSize===1">
+            <span>No members added in the group</span>
+        </div>
+        <div class="add-members">
+            <img class="plus" src="\assets\plus-svgrepo-com (1).svg" alt="">
+            <input type="button" class="add-members-btn" value="add members" (click)="addMember()">
+        </div>
+    </main>
 </body>
 </html>
