@@ -75,7 +75,7 @@ main{
     cursor: pointer;
 }
 .grp-members{
-    display: flex;
+    display: S;
     flex-direction: row;
     height: 19px;
     text-decoration: none;
