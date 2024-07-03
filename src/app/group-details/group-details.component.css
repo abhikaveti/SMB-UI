@@ -1,0 +1,25 @@
+header{
+    padding: 2%;
+    background-color: rgba(0,100,100,0.7);
+    color: rgb(255,255,255);
+}
+.add-members{
+    background-color: aquamarine;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 50px;
+    right: 20px;
+    height: 30px;
+    align-items: center;
+}
+
+.plus{
+    height: 25px;
+    padding: 2px;
+}
+
+.add-members-btn{
+    border: none;
+    background: none;
+}
