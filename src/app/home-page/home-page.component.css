@@ -43,26 +43,36 @@ main{
 }
 
 .creategroup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 4px;
     align-self: center;
-    background-color: aliceblue;
+    background-color: rgb(92, 197, 60);
+    cursor: pointer;
 }
 
 .create-more-grps{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     position: absolute;
     bottom: 50px;
-    right: 20px;
+    right: 50px;
     height: 30px;
+    background-color: rgb(92, 197, 60);
+    cursor: pointer;
 }
 
 .create-btn{
     border: none;
     background: none;
     text-decoration: none;
-    color: rgb(143, 225, 221) ;
+    color: black ;
 }
 
 .plus{
+    padding: 5px;
     height: 24px;
 }
 
