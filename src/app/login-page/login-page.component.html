@@ -37,14 +37,19 @@
           </div>
         </label>
 
-        <label for="submit">
-          <input type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" (click)="logIn()" id="submit" value="Log In">
-          <hr>
-        </label>
-
-        <label for="signupbtn">
-            <a  class="btn btn-success btn-lg btn-block" id="signupbtn" href="/signup">Create new account</a>
-        </label>
+        <div class="btn btn-primary" (click)="logIn()">
+          <label for="submit">
+            <span id="submit">
+              Log In
+            </span>
+          </label>
+        </div>
+        <br>
+        <div class="btn btn-success" [routerLink]="'/signup'">
+          <label for="signupbtn">
+            <span id="signupbtn">Create new account</span>
+          </label>
+        </div>
       </div>
     </form>
   </main>

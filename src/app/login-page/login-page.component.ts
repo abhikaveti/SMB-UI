@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ValidateCredsService } from 'src/app/services/validate-creds.service';
 import { ValidateCredsRequest } from 'src/app/models/validate-creds-request';
 
 @Component({
   selector: 'app-login-page',
   standalone:true,
-  imports:[ReactiveFormsModule, CommonModule],
+  imports:[ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
@@ -38,6 +38,18 @@ export class LoginPageComponent {
   logIn(){
     this.username = this.userName?.value?.toLowerCase();
     this.password = this.passWord?.value;
+
+    if(this.loginForm.invalid){
+      
+      if(this.userName?.invalid){
+        this.userName.markAsTouched();
+      }
+      if(this.passWord?.invalid){
+        this.passWord.markAsTouched();
+      }
+      return;
+    }
+
     const validateReq: ValidateCredsRequest = new ValidateCredsRequest(this.username,this.password);
     console.log(validateReq);
     
